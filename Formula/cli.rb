@@ -11,15 +11,15 @@ class Cli < Formula
   
     on_macos do
       if Hardware::CPU.intel?
-        url "https://github.com/OpsLevel/cli/releases/download/v0.1.0-beta.1/cli_darwin_amd64.tar.gz"
-        sha256 "605e81ca0697836b72598bceed4b5cf626ca2ebeb95a695130372753e2aca06b"
+        url "https://github.com/OpsLevel/cli/releases/download/v0.1.0-beta.1/opslevel-darwin-amd64.tar.gz"
+        sha256 "b1a7de49e9a292437a23dfb474540cce48b0954e4f7340a3273e20623bc57c54"
       end
     end
   
     on_linux do
       if Hardware::CPU.intel?
-        url "https://github.com/OpsLevel/cli/releases/download/v0.1.0-beta.1/cli_linux_amd64.tar.gz"
-        sha256 "87e216175d337394ccc234a068976ca454c3f30b3d48e8c8dfac5525a3f05be9"
+        url "https://github.com/OpsLevel/cli/releases/download/v0.1.0-beta.1/opslevel-linux-amd64.tar.gz"
+        sha256 "624d9dbab26074508bdfc8086490cc6b530b06b3c1a3b11a8363aa4281c94e90"
       end
     end
   
@@ -33,3 +33,4 @@ class Cli < Formula
       system "#{bin}/opslevel version"
     end
   end
+  
