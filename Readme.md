@@ -29,7 +29,7 @@ brew tap opslevel/tap
 With the following commands, you can install the latest version of each product:
 ```sh
 # Formulae
-brew install opslevel/tap/kubectl
+brew install opslevel/tap/kubectl-opslevel
 ```
 
 ## Why should I install packages from this tap?
