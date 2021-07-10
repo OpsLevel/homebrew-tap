@@ -12,14 +12,14 @@ class Cli < Formula
     on_macos do
       if Hardware::CPU.intel?
         url "https://github.com/OpsLevel/cli/releases/download/v0.1.0-beta.1/opslevel-darwin-amd64.tar.gz"
-        sha256 "b1a7de49e9a292437a23dfb474540cce48b0954e4f7340a3273e20623bc57c54"
+        sha256 "6ea7c2b7af93584e5315c1891321b1be0708d43e6c521f1b2958d6dad16a7a9f"
       end
     end
   
     on_linux do
       if Hardware::CPU.intel?
         url "https://github.com/OpsLevel/cli/releases/download/v0.1.0-beta.1/opslevel-linux-amd64.tar.gz"
-        sha256 "624d9dbab26074508bdfc8086490cc6b530b06b3c1a3b11a8363aa4281c94e90"
+        sha256 "6ea7c2b7af93584e5315c1891321b1be0708d43e6c521f1b2958d6dad16a7a9f"
       end
     end
   
