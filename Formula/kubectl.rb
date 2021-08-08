@@ -5,33 +5,33 @@
 class Kubectl < Formula
   desc "Command line tool that enables you to import & reconcile services with OpsLevel"
   homepage "https://www.opslevel.com/"
-  version "0.4.5"
+  version "0.4.6"
   license "MIT"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/OpsLevel/kubectl-opslevel/releases/download/v0.4.5/kubectl-opslevel-darwin-amd64.tar.gz"
-      sha256 "90fab67ed391a58b3df08e64c57604bf1f83fc88aee26d0df227941988a0bbe0"
+      url "https://github.com/OpsLevel/kubectl-opslevel/releases/download/v0.4.6/kubectl-opslevel-darwin-amd64.tar.gz"
+      sha256 "a6efa7de42f97018ded8f85b85ea93ed47576c62d1950b7ed60820971b27dc8b"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/OpsLevel/kubectl-opslevel/releases/download/v0.4.5/kubectl-opslevel-darwin-arm64.tar.gz"
-      sha256 "4eec66b241a75e0c3a3dab87cd564777097685eec26bed1103a49e61a443613f"
+      url "https://github.com/OpsLevel/kubectl-opslevel/releases/download/v0.4.6/kubectl-opslevel-darwin-arm64.tar.gz"
+      sha256 "052af8c41f95b735e66b6e684de5928405c1ea2f2138cfbae05a789aef8fb583"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/OpsLevel/kubectl-opslevel/releases/download/v0.4.5/kubectl-opslevel-linux-amd64.tar.gz"
-      sha256 "ee9073af2466abc70c522e90b80cd25815014a4071c97749eab9e315878566ed"
+      url "https://github.com/OpsLevel/kubectl-opslevel/releases/download/v0.4.6/kubectl-opslevel-linux-amd64.tar.gz"
+      sha256 "2334103952f3f031caf4f3e957177e1d2e848ef71778d996aba3211e04c433ee"
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/OpsLevel/kubectl-opslevel/releases/download/v0.4.5/kubectl-opslevel-linux-arm.tar.gz"
-      sha256 "a5c70f060d80ba1509bf82a623bf5c2a1cd25cc015f703e474b93636896f0956"
+      url "https://github.com/OpsLevel/kubectl-opslevel/releases/download/v0.4.6/kubectl-opslevel-linux-arm.tar.gz"
+      sha256 "287f5b6d1e80886ca2ecfb2cfebc9db707454b3b5fd6aa432c0c3c0115a84d4b"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/OpsLevel/kubectl-opslevel/releases/download/v0.4.5/kubectl-opslevel-linux-arm64.tar.gz"
-      sha256 "39c17c94d6de24f8d6efa98627ea0e83a06a66bd56bdde359814e468e1b17f03"
+      url "https://github.com/OpsLevel/kubectl-opslevel/releases/download/v0.4.6/kubectl-opslevel-linux-arm64.tar.gz"
+      sha256 "0006044a916019f290785381b397b9e35638033892338fb69441160c81fbaba6"
     end
   end
 
