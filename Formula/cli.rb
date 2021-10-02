@@ -5,33 +5,33 @@
 class Cli < Formula
   desc "Opslevel Command Line Utility"
   homepage "https://www.opslevel.com/"
-  version "0.3.0-beta.5"
+  version "0.3.0"
   license "MIT"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/OpsLevel/cli/releases/download/v0.3.0-beta.5/opslevel-darwin-amd64.tar.gz"
-      sha256 "70d129db288cb6aa188f5a8698b2cb45ec556aad787aa8853123506be535a105"
+      url "https://github.com/OpsLevel/cli/releases/download/v0.3.0/opslevel-darwin-amd64.tar.gz"
+      sha256 "6f0165f03e7a1929a36e63fa4b1e526b1b62a0ff0db61d87b9484dcde80ae5a9"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/OpsLevel/cli/releases/download/v0.3.0-beta.5/opslevel-darwin-arm64.tar.gz"
-      sha256 "9529eddd71e985121b46f595538e48b1b9d24768f0382b54a607a1c60ef3d88d"
+      url "https://github.com/OpsLevel/cli/releases/download/v0.3.0/opslevel-darwin-arm64.tar.gz"
+      sha256 "e0f394be5d89d8e47c398760be5ff28c2e82f4012906187d786b80640a58fff4"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/OpsLevel/cli/releases/download/v0.3.0-beta.5/opslevel-linux-amd64.tar.gz"
-      sha256 "52b8fc5446aecf54559e7a22e1457844fa29362ded81b10b8a168fff753109de"
+      url "https://github.com/OpsLevel/cli/releases/download/v0.3.0/opslevel-linux-amd64.tar.gz"
+      sha256 "f65c274aba366402ced5a4ee3edd256911f4a10932877906d1ab7c347f674d92"
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/OpsLevel/cli/releases/download/v0.3.0-beta.5/opslevel-linux-arm.tar.gz"
-      sha256 "e51b4d9a9ad47d5c5737d5d35b1c8c863c1ca272bae937a2e99a68c710a3605b"
+      url "https://github.com/OpsLevel/cli/releases/download/v0.3.0/opslevel-linux-arm.tar.gz"
+      sha256 "ccf0f212fa220aa29487ec3d21a1de0b7d78acbf0079e730bc9f4e74d1ad0d57"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/OpsLevel/cli/releases/download/v0.3.0-beta.5/opslevel-linux-arm64.tar.gz"
-      sha256 "15cb27a1fea909635b483883a68fc128198969a7b55ea4d219a4ef9c901a0745"
+      url "https://github.com/OpsLevel/cli/releases/download/v0.3.0/opslevel-linux-arm64.tar.gz"
+      sha256 "c53d3944ecfbed9504be875bf731bee9548926234e8269e7cfe1cb56acfd09bc"
     end
   end
 
