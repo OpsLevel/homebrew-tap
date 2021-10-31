@@ -5,21 +5,21 @@
 class Kubectl < Formula
   desc "Command line tool that enables you to import & reconcile services with OpsLevel"
   homepage "https://www.opslevel.com/"
-  version "0.6.1"
+  version "0.6.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/OpsLevel/kubectl-opslevel/releases/download/v0.6.1/kubectl-opslevel-darwin-amd64.tar.gz"
-      sha256 "0aec188ed8f8fc90a8236983c6928faf650c7465a4052e14e2e07850d9e70e64"
+      url "https://github.com/OpsLevel/kubectl-opslevel/releases/download/v0.6.2/kubectl-opslevel-darwin-amd64.tar.gz"
+      sha256 "0a2e4fdfcc4362c1b1889082bcc012657a97a55db25f58bf299cedb6ee4841ad"
 
       def install
         bin.install "kubectl-opslevel"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/OpsLevel/kubectl-opslevel/releases/download/v0.6.1/kubectl-opslevel-darwin-arm64.tar.gz"
-      sha256 "ba6f8aca58210e29d76c3e7a3342b24a9fba05e5476f8b262a066de8faa4873a"
+      url "https://github.com/OpsLevel/kubectl-opslevel/releases/download/v0.6.2/kubectl-opslevel-darwin-arm64.tar.gz"
+      sha256 "d4a4ca6cc406d8fbae610dedaf53e1d3d90a15f205001fff04d4c9875ffa890c"
 
       def install
         bin.install "kubectl-opslevel"
@@ -28,25 +28,25 @@ class Kubectl < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/OpsLevel/kubectl-opslevel/releases/download/v0.6.1/kubectl-opslevel-linux-amd64.tar.gz"
-      sha256 "bad64a6c410d40369f8bfc787e5f4592a88c2c6a25282a8abe4f152379a70c23"
-
-      def install
-        bin.install "kubectl-opslevel"
-      end
-    end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/OpsLevel/kubectl-opslevel/releases/download/v0.6.1/kubectl-opslevel-linux-arm.tar.gz"
-      sha256 "6be5fa67abfbde6602d9b1dc7f486fb7590992acb527c70fa2f5441ff455c68f"
+      url "https://github.com/OpsLevel/kubectl-opslevel/releases/download/v0.6.2/kubectl-opslevel-linux-arm.tar.gz"
+      sha256 "651f06523dc4f9391251e9417e24cad0be7e2d410a86a53496cb9ae1858d02f1"
 
       def install
         bin.install "kubectl-opslevel"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/OpsLevel/kubectl-opslevel/releases/download/v0.6.1/kubectl-opslevel-linux-arm64.tar.gz"
-      sha256 "e11858c327ed978e6c5152a53c1816243030ea560ed2da1183def80b8d74fed7"
+      url "https://github.com/OpsLevel/kubectl-opslevel/releases/download/v0.6.2/kubectl-opslevel-linux-arm64.tar.gz"
+      sha256 "6879f300c7409448b94b3234ba3494459a36abffd07c6c24a30129686328b0d5"
+
+      def install
+        bin.install "kubectl-opslevel"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/OpsLevel/kubectl-opslevel/releases/download/v0.6.2/kubectl-opslevel-linux-amd64.tar.gz"
+      sha256 "afda721f45d8072e06efb01dabde26b58e5d8e2e45cd27861785345c8c55c64c"
 
       def install
         bin.install "kubectl-opslevel"
