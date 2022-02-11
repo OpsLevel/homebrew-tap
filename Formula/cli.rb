@@ -5,21 +5,21 @@
 class Cli < Formula
   desc "Opslevel Command Line Utility"
   homepage "https://www.opslevel.com/"
-  version "0.3.5"
+  version "2022.02.11"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/OpsLevel/cli/releases/download/v0.3.5/opslevel-darwin-arm64.tar.gz"
-      sha256 "aded383e370b15e4493206cf294dc33a16e23fcd5192b7ccc6dd5a63d5cef4ca"
+    if Hardware::CPU.intel?
+      url "https://github.com/OpsLevel/cli/releases/download/v2022.02.11/opslevel-darwin-amd64.tar.gz"
+      sha256 "36146d09cd926cbc551340203680489e8440c06d8288b42e749bcccbe8969402"
 
       def install
         bin.install "opslevel"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/OpsLevel/cli/releases/download/v0.3.5/opslevel-darwin-amd64.tar.gz"
-      sha256 "bd51b83fcef1e41fe794549e71cbc22cbc471c33149db1e1730a302d6e5b5df5"
+    if Hardware::CPU.arm?
+      url "https://github.com/OpsLevel/cli/releases/download/v2022.02.11/opslevel-darwin-arm64.tar.gz"
+      sha256 "b02fc010566df100325339f33b31390a7fb51f7772dc3da49e64b01553e26169"
 
       def install
         bin.install "opslevel"
@@ -28,25 +28,25 @@ class Cli < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/OpsLevel/cli/releases/download/v0.3.5/opslevel-linux-arm.tar.gz"
-      sha256 "03027ebd18c19705923504f835709c78541c289d3dda25f72b8b596233c482d0"
+    if Hardware::CPU.intel?
+      url "https://github.com/OpsLevel/cli/releases/download/v2022.02.11/opslevel-linux-amd64.tar.gz"
+      sha256 "fd2b8e3e636256af502e39a37cbb6f4e9236ea68f273ca32345aea8a1252f66a"
 
       def install
         bin.install "opslevel"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/OpsLevel/cli/releases/download/v0.3.5/opslevel-linux-arm64.tar.gz"
-      sha256 "882297e21e4858bd949afe6a730f92aaa2e884fdb61ee35709f216297f418b34"
+      url "https://github.com/OpsLevel/cli/releases/download/v2022.02.11/opslevel-linux-arm64.tar.gz"
+      sha256 "48f3307749e48ec0ab08d3f774a1dcfdfa0a4d575245d6b3e41fd664fed555fe"
 
       def install
         bin.install "opslevel"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/OpsLevel/cli/releases/download/v0.3.5/opslevel-linux-amd64.tar.gz"
-      sha256 "991e60096368c5fc4cfc78e5f8065342fe46107f6f645a32c6e439a829bb3618"
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/OpsLevel/cli/releases/download/v2022.02.11/opslevel-linux-arm.tar.gz"
+      sha256 "201ae4785bf664b9cb50b6bb52f30e509a9de7a3054b29bc87802b59b773933a"
 
       def install
         bin.install "opslevel"
