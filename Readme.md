@@ -15,6 +15,9 @@ See more at https://docs.brew.sh/Taps
 
 ```sh
 brew install opslevel/tap/<name>
+
+# Or to upgrade
+brew upgrade opslevel/tap/<name>
 ```
 
 You can also only add the tap which makes formulae within it
