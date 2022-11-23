@@ -5,21 +5,21 @@
 class OpslevelRunner < Formula
   desc "Command line tool that runs jobs for OpsLevel"
   homepage "https://www.opslevel.com/"
-  version "2022.9.25"
+  version "2022.11.23"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/OpsLevel/opslevel-runner/releases/download/v2022.9.25/opslevel-runner-darwin-amd64.tar.gz"
-      sha256 "a8776d3151ada42ac06cf30765be628752dc20bcfe8e102d9bbfd280943ced52"
+      url "https://github.com/OpsLevel/opslevel-runner/releases/download/v2022.11.23/opslevel-runner-darwin-amd64.tar.gz"
+      sha256 "624bed736be0ead5d814c4ca611ff9bbca6be06dad5671239bd23532ef7f2c9e"
 
       def install
         bin.install "opslevel-runner"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/OpsLevel/opslevel-runner/releases/download/v2022.9.25/opslevel-runner-darwin-arm64.tar.gz"
-      sha256 "d5be150acd61411be07933202c86fbd92d1c4bcf624f0d6c30ff8422719aeb08"
+      url "https://github.com/OpsLevel/opslevel-runner/releases/download/v2022.11.23/opslevel-runner-darwin-arm64.tar.gz"
+      sha256 "ae013cd1bb3c70f345f4d878dfcd05d603f39ccd3d5f5346260e9a44befc7219"
 
       def install
         bin.install "opslevel-runner"
@@ -29,24 +29,24 @@ class OpslevelRunner < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/OpsLevel/opslevel-runner/releases/download/v2022.9.25/opslevel-runner-linux-amd64.tar.gz"
-      sha256 "3286f3c66f4491ce9924d5581ed3a8b9edf37a3fcc480aa71134dfa869dfde11"
+      url "https://github.com/OpsLevel/opslevel-runner/releases/download/v2022.11.23/opslevel-runner-linux-amd64.tar.gz"
+      sha256 "c4e159563d4afa67d726dcf60ec80bbca71fc973bd71b4941985c83dd7a20cbf"
 
       def install
         bin.install "opslevel-runner"
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/OpsLevel/opslevel-runner/releases/download/v2022.9.25/opslevel-runner-linux-arm.tar.gz"
-      sha256 "5932e0c68034e766e438a66777acbb3db253cc8bdbabda931c2f28216ee9a696"
+      url "https://github.com/OpsLevel/opslevel-runner/releases/download/v2022.11.23/opslevel-runner-linux-arm.tar.gz"
+      sha256 "73e10b7baf107f1d03fb4eafd157a4ba37ffb424a8777661906141fce4dad94f"
 
       def install
         bin.install "opslevel-runner"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/OpsLevel/opslevel-runner/releases/download/v2022.9.25/opslevel-runner-linux-arm64.tar.gz"
-      sha256 "7ebe92820a4dc6cc86fc76a65d39c9910a7f31fc7105cd771fd94a6e6cdd7ba8"
+      url "https://github.com/OpsLevel/opslevel-runner/releases/download/v2022.11.23/opslevel-runner-linux-arm64.tar.gz"
+      sha256 "af1ee0321b420b4d5319e1b26b202332903cbb549d5390a4e32d1520fcf9d7fd"
 
       def install
         bin.install "opslevel-runner"
