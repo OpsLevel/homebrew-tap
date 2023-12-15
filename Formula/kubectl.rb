@@ -5,53 +5,27 @@
 class Kubectl < Formula
   desc "Command line tool that enables you to import & reconcile services with OpsLevel"
   homepage "https://www.opslevel.com/"
-  version "2022.10.19"
+  version "2023.12.15"
   license "MIT"
 
   depends_on "jq"
+  depends_on :macos
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/OpsLevel/kubectl-opslevel/releases/download/v2022.10.19/kubectl-opslevel-darwin-amd64.tar.gz"
-      sha256 "3d1c00a10488a7d23bf67f6605ef495619c2fd64fad4b4d2fc0b0658e4b91b43"
+    url "https://github.com/OpsLevel/kubectl-opslevel/releases/download/v2023.12.15/kubectl-opslevel-darwin-amd64.tar.gz"
+    sha256 "8d87020766e0a807b5bdb2ddaad131542a81bbe86311ed8a8e3308ae59ef24f4"
 
-      def install
-        bin.install "kubectl-opslevel"
-      end
+    def install
+      bin.install "kubectl-opslevel"
     end
+
     if Hardware::CPU.arm?
-      url "https://github.com/OpsLevel/kubectl-opslevel/releases/download/v2022.10.19/kubectl-opslevel-darwin-arm64.tar.gz"
-      sha256 "271c27c739b8ff2ab6c25df5b4b7f067f378f3a2eb966f17635f379bfdd4a346"
-
-      def install
-        bin.install "kubectl-opslevel"
-      end
-    end
-  end
-
-  on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/OpsLevel/kubectl-opslevel/releases/download/v2022.10.19/kubectl-opslevel-linux-amd64.tar.gz"
-      sha256 "2752e359f92d52483ae61f28a8ff014922f80383acf10af1074b7ac98854ace2"
-
-      def install
-        bin.install "kubectl-opslevel"
-      end
-    end
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/OpsLevel/kubectl-opslevel/releases/download/v2022.10.19/kubectl-opslevel-linux-arm.tar.gz"
-      sha256 "a27c637d388eefe9ea2749c2c69a6f85606e393494882aaf991efc24a1a73dab"
-
-      def install
-        bin.install "kubectl-opslevel"
-      end
-    end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/OpsLevel/kubectl-opslevel/releases/download/v2022.10.19/kubectl-opslevel-linux-arm64.tar.gz"
-      sha256 "a793f47c81a2286c9db0053e2945ec39aa1c0b8a5e6335046ff0c39b083448e8"
-
-      def install
-        bin.install "kubectl-opslevel"
+      def caveats
+        <<~EOS
+          The darwin_arm64 architecture is not supported for the Kubectl
+          formula at this time. The darwin_amd64 binary may work in compatibility
+          mode, but it might not be fully supported.
+        EOS
       end
     end
   end
