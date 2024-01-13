@@ -5,15 +5,15 @@
 class Kubectl < Formula
   desc "Command line tool that enables you to import & reconcile services with OpsLevel"
   homepage "https://www.opslevel.com/"
-  version "2023.12.15"
+  version "2024.1.13"
   license "MIT"
 
   depends_on "jq"
   depends_on :macos
 
   on_macos do
-    url "https://github.com/OpsLevel/kubectl-opslevel/releases/download/v2023.12.15/kubectl-opslevel-darwin-amd64.tar.gz"
-    sha256 "8d87020766e0a807b5bdb2ddaad131542a81bbe86311ed8a8e3308ae59ef24f4"
+    url "https://github.com/OpsLevel/kubectl-opslevel/releases/download/v2024.1.13/kubectl-opslevel-darwin-amd64.tar.gz"
+    sha256 "f4d763e006ca17965d5af2c3c62c407246c0dd678c5d0d1155a637b7b7f295c4"
 
     def install
       bin.install "kubectl-opslevel"
