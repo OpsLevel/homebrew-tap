@@ -5,18 +5,23 @@
 class Kubectl < Formula
   desc "Command line tool that enables you to import & reconcile services with OpsLevel"
   homepage "https://www.opslevel.com/"
-  version "2024.1.13"
+  version "2024.1.27"
   license "MIT"
 
+  depends_on "go"
   depends_on "jq"
   depends_on :macos
 
   on_macos do
-    url "https://github.com/OpsLevel/kubectl-opslevel/releases/download/v2024.1.13/kubectl-opslevel-darwin-amd64.tar.gz"
-    sha256 "f4d763e006ca17965d5af2c3c62c407246c0dd678c5d0d1155a637b7b7f295c4"
+    url "https://github.com/OpsLevel/kubectl-opslevel/releases/download/v2024.1.27/kubectl-opslevel-darwin-amd64.tar.gz"
+    sha256 "1fc44de2a921d4976bd6ab8043fff9be983c9efcca614059a3041cb21060f14a"
 
     def install
-      bin.install "kubectl-opslevel"
+      ENV["CGO_ENABLED"] = "1"
+      ENV["CGO_CFLAGS"] = "-I#{Formula["jq"].opt_include}"
+      ENV["CGO_LDFLAGS"] = "-L#{Formula["jq"].opt_lib}"
+
+      system "go", "build", *std_go_args(output: bin/"kubectl-opslevel", ldflags: "-s -w"), "./src"
     end
 
     if Hardware::CPU.arm?
@@ -31,6 +36,6 @@ class Kubectl < Formula
   end
 
   test do
-    system "#{bin}/kubectl-opslevel version"
+    system "#{bin}/kubectl-opslevel", "version"
   end
 end
