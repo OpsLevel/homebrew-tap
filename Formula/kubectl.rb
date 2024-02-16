@@ -25,16 +25,6 @@ class Kubectl < Formula
         system 'go', 'build', *std_go_args(output: bin / 'kubectl-opslevel', ldflags: '-s -w')
       end
     end
-
-    if Hardware::CPU.arm?
-      def caveats
-        <<~EOS
-          The darwin_arm64 architecture is not supported for the Kubectl
-          formula at this time. The darwin_amd64 binary may work in compatibility
-          mode, but it might not be fully supported.
-        EOS
-      end
-    end
   end
 
   test do
