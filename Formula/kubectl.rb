@@ -14,7 +14,7 @@ class Kubectl < Formula
 
   on_macos do
     url 'https://github.com/OpsLevel/kubectl-opslevel/archive/refs/tags/v2024.2.26.tar.gz'
-    sha256 'ca9a8f9f513161592068d7c5003b5311e49b010f43ff8effc65bb23e0f1c4a08'
+    sha256 '9b6056f68338139adc50678d16fc8fefd42dea3ecbd149ed562622a94a2747ec'
 
     def install
       ENV['CGO_ENABLED'] = '1'
