@@ -5,7 +5,7 @@
 class Kubectl < Formula
   desc 'Command line tool that enables you to import & reconcile services with OpsLevel'
   homepage 'https://www.opslevel.com/'
-  version '2024.1.27'
+  version 'v2024.2.26'
   license 'MIT'
 
   depends_on 'go'
@@ -13,7 +13,7 @@ class Kubectl < Formula
   depends_on :macos
 
   on_macos do
-    url 'https://github.com/OpsLevel/kubectl-opslevel/archive/refs/tags/v2024.1.27.tar.gz'
+    url 'https://github.com/OpsLevel/kubectl-opslevel/archive/refs/tags/vv2024.2.26.tar.gz'
     sha256 'ca9a8f9f513161592068d7c5003b5311e49b010f43ff8effc65bb23e0f1c4a08'
 
     def install
