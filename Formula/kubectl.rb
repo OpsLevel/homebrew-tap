@@ -13,7 +13,8 @@ class Kubectl < Formula
   depends_on :macos
 
   on_macos do
-    url 'https://github.com/OpsLevel/kubectl-opslevel/archive/refs/tags/v2024.2.26.tar.gz'
+    kubectl_opslevel_version = '2024.2.26'
+    url "https://github.com/OpsLevel/kubectl-opslevel/archive/refs/tags/v#{kubectl_opslevel_version}.tar.gz"
     sha256 '9b6056f68338139adc50678d16fc8fefd42dea3ecbd149ed562622a94a2747ec'
 
     def install
@@ -22,7 +23,8 @@ class Kubectl < Formula
       ENV['CGO_LDFLAGS'] = "-L#{Formula['jq'].opt_lib}"
 
       cd 'src' do
-        system 'go', 'build', *std_go_args(output: bin / 'kubectl-opslevel', ldflags: '-s -w')
+        system 'go', 'build', *std_go_args(output: bin / 'kubectl-opslevel',
+                                           ldflags: "-s -w -X github.com/opslevel/kubectl-opslevel/cmd.version=#{kubectl_opslevel_version}")
       end
     end
   end
