@@ -22,7 +22,8 @@ class Kubectl < Formula
       ENV['CGO_LDFLAGS'] = "-L#{Formula['jq'].opt_lib}"
 
       cd 'src' do
-        system 'go', 'build', *std_go_args(output: bin / 'kubectl-opslevel', ldflags: '-s -w -X main.version=2024.2.26')
+        system 'go', 'build', *std_go_args(output: bin / 'kubectl-opslevel',
+                                           ldflags: '-s -w -X main.version=2024.2.26 -X main.commit=1535696e1f76')
       end
     end
   end
