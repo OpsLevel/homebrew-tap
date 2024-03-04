@@ -16,6 +16,10 @@ class Kubectl < Formula
     url 'https://github.com/OpsLevel/kubectl-opslevel/archive/refs/tags/v2024.3.4.tar.gz'
     sha256 '27480caca25a8d3634d5550a2362536102fa43c62aa87bf33bf2b5fac37b002c'
 
+    if Hardware::CPU.arm?
+      sha256 '15bda9c278ac72fd9209999fffeb345f0a21551d3ed7237812c95fdb0bbf6d7f'
+    end
+
     def install
       ENV['CGO_ENABLED'] = '1'
       ENV['CGO_CFLAGS'] = "-I#{Formula['jq'].opt_include}"
