@@ -14,7 +14,7 @@ class Kubectl < Formula
 
   on_macos do
     url 'https://github.com/OpsLevel/kubectl-opslevel/archive/refs/tags/v2024.3.4.tar.gz'
-    sha256 '27480caca25a8d3634d5550a2362536102fa43c62aa87bf33bf2b5fac37b002c'
+    sha256 '9b6056f68338139adc50678d16fc8fefd42dea3ecbd149ed562622a94a2747ec'
 
     def install
       ENV['CGO_ENABLED'] = '1'
@@ -23,7 +23,7 @@ class Kubectl < Formula
 
       cd 'src' do
         system 'go', 'build', *std_go_args(output: bin / 'kubectl-opslevel',
-                                           ldflags: '-s -w -X main.version=2024.3.4 -X main.commit=0ab69af3cf5d')
+                                           ldflags: '-s -w -X main.version=2024.3.4 -X main.commit=1535696e1f76')
       end
     end
   end
