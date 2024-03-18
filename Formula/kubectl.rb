@@ -14,10 +14,10 @@ class Kubectl < Formula
 
   on_macos do
     url 'https://github.com/OpsLevel/kubectl-opslevel/archive/refs/tags/v2024.3.18.tar.gz'
-    sha256 'cc8fe2d24f12a9fcc5ba270f1703880165b6ae5df8d9b8668d12bdea0f988da4'
+    sha256 '548aa2c2967d82d555e533ff0c0f3fa023b2b182bef9eb25c0dbccb925086d1b'
 
     if Hardware::CPU.arm?
-      sha256 'cc8fe2d24f12a9fcc5ba270f1703880165b6ae5df8d9b8668d12bdea0f988da4'
+      sha256 '548aa2c2967d82d555e533ff0c0f3fa023b2b182bef9eb25c0dbccb925086d1b'
     end
 
     def install
@@ -27,7 +27,7 @@ class Kubectl < Formula
 
       cd 'src' do
         system 'go', 'build', *std_go_args(output: bin / 'kubectl-opslevel',
-                                           ldflags: '-s -w -X main.version=2024.3.18 -X main.commit=dd6b01508e73')
+                                           ldflags: '-s -w -X main.version=2024.3.18 -X main.commit=4f8a77404a4b')
       end
     end
   end
