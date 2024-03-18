@@ -17,7 +17,7 @@ class Kubectl < Formula
     sha256 '548aa2c2967d82d555e533ff0c0f3fa023b2b182bef9eb25c0dbccb925086d1b'
 
     if Hardware::CPU.arm?
-      sha256 '548aa2c2967d82d555e533ff0c0f3fa023b2b182bef9eb25c0dbccb925086d1b'
+      sha256 'c4696b440b28548f376d1a9f5eaa5bb11b643e1f22beaa140ddf2a9eaf8aeb1c'
     end
 
     def install
