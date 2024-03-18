@@ -5,7 +5,7 @@
 class Kubectl < Formula
   desc 'Command line tool that enables you to import & reconcile services with OpsLevel'
   homepage 'https://www.opslevel.com/'
-  version '2024.3.4'
+  version '2024.3.18'
   license 'MIT'
 
   depends_on 'go'
@@ -13,11 +13,11 @@ class Kubectl < Formula
   depends_on :macos
 
   on_macos do
-    url 'https://github.com/OpsLevel/kubectl-opslevel/archive/refs/tags/v2024.3.4.tar.gz'
-    sha256 '27480caca25a8d3634d5550a2362536102fa43c62aa87bf33bf2b5fac37b002c'
+    url 'https://github.com/OpsLevel/kubectl-opslevel/archive/refs/tags/v2024.3.18.tar.gz'
+    sha256 'cc8fe2d24f12a9fcc5ba270f1703880165b6ae5df8d9b8668d12bdea0f988da4'
 
     if Hardware::CPU.arm?
-      sha256 '15bda9c278ac72fd9209999fffeb345f0a21551d3ed7237812c95fdb0bbf6d7f'
+      sha256 'cc8fe2d24f12a9fcc5ba270f1703880165b6ae5df8d9b8668d12bdea0f988da4'
     end
 
     def install
@@ -27,7 +27,7 @@ class Kubectl < Formula
 
       cd 'src' do
         system 'go', 'build', *std_go_args(output: bin / 'kubectl-opslevel',
-                                           ldflags: '-s -w -X main.version=2024.3.4 -X main.commit=0ab69af3cf5d')
+                                           ldflags: '-s -w -X main.version=2024.3.18 -X main.commit=dd6b01508e73')
       end
     end
   end
