@@ -21,7 +21,7 @@ class Kubectl < Formula
     cd 'src' do
       system 'go', 'build', *std_go_args(
         output: bin / 'kubectl-opslevel',
-        ldflags: "-s -w -X main.version=#{version.major_minor_patch} -X main.commit=#{Utils.git_short_head}"
+        ldflags: "-s -w -X main.version=#{version.major_minor_patch} -X main.commit=4f8a77404a4b"
       )
     end
   end
