@@ -10,7 +10,9 @@ class Kubectl < Formula
   depends_on 'go'
   depends_on 'jq'
 
-  url "https://github.com/OpsLevel/kubectl-opslevel/archive/refs/tags/v#{version.major_minor_patch}.tar.gz"
+  url 'https://github.com/OpsLevel/kubectl-opslevel.git',
+      tag: "v#{version.major_minor_patch}",
+      revision: '4f8a77404a4b285716c94912007753ea02e6d539'
   sha256 'c4696b440b28548f376d1a9f5eaa5bb11b643e1f22beaa140ddf2a9eaf8aeb1c'
 
   def install
@@ -21,7 +23,7 @@ class Kubectl < Formula
     cd 'src' do
       system 'go', 'build', *std_go_args(
         output: bin / 'kubectl-opslevel',
-        ldflags: "-s -w -X main.version=#{version.major_minor_patch} -X main.commit=4f8a77404a4b"
+        ldflags: "-s -w -X main.version=#{version.major_minor_patch} -X main.commit=#{Utils.git_short_head}"
       )
     end
   end
