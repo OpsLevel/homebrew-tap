@@ -11,7 +11,7 @@ class Kubectl < Formula
   depends_on 'jq'
 
   url 'https://github.com/OpsLevel/kubectl-opslevel.git',
-      tag: "v#{version.major_minor_patch}",
+      tag: 'v2024.3.18',
       revision: '4f8a77404a4b285716c94912007753ea02e6d539'
   sha256 'c4696b440b28548f376d1a9f5eaa5bb11b643e1f22beaa140ddf2a9eaf8aeb1c'
 
