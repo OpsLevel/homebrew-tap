@@ -13,7 +13,7 @@ class Kubectl < Formula
   depends_on :macos
 
   url "https://github.com/opslevel/kubectl-opslevel/archive/refs/tags/v2024.5.1.tar.gz"
-  sha256 "b521c1d26e80e2933d919e424a35204715b664729a618a295e215b4d8360e39d"
+  sha256 "c903ed8be144eb93d1a0232bd9fc243a302bbe1c973ec38cfd4bc2ebccb057a5"
 
   def install
     ENV['CGO_ENABLED'] = '1'
