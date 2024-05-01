@@ -12,20 +12,18 @@ class Kubectl < Formula
   depends_on "jq"
   depends_on :macos
 
-  if Hardware::CPU.arm?
-    url "https://github.com/opslevel/kubectl-opslevel/archive/refs/tags/v2024.5.1.tar.gz"
-    sha256 "b521c1d26e80e2933d919e424a35204715b664729a618a295e215b4d8360e39d"
+  url "https://github.com/opslevel/kubectl-opslevel/archive/refs/tags/v2024.5.1.tar.gz"
+  sha256 "b521c1d26e80e2933d919e424a35204715b664729a618a295e215b4d8360e39d"
 
-    def install
-      ENV['CGO_ENABLED'] = '1'
-      ENV['CGO_CFLAGS'] = "-I#{Formula['jq'].opt_include}"
-      ENV['CGO_LDFLAGS'] = "-L#{Formula['jq'].opt_lib}"
-      cd 'src' do
-        system 'go', 'build', *std_go_args(
-          output: bin / 'kubectl-opslevel',
-          ldflags: "-s -w -X main.version=2024.5.1 -X main.commit=e4856e2"
-        )
-      end
+  def install
+    ENV['CGO_ENABLED'] = '1'
+    ENV['CGO_CFLAGS'] = "-I#{Formula['jq'].opt_include}"
+    ENV['CGO_LDFLAGS'] = "-L#{Formula['jq'].opt_lib}"
+    cd 'src' do
+      system 'go', 'build', *std_go_args(
+        output: bin / 'kubectl-opslevel',
+        ldflags: "-s -w -X main.version=2024.5.1 -X main.commit=e4856e2"
+      )
     end
   end
 
