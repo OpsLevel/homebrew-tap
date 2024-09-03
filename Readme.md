@@ -1,3 +1,5 @@
+[![Overall](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fapp.opslevel.com%2Fapi%2Fservice_level%2FEaWapOq9VQj5FvymQEgCPNJcbF-TOibHn89Arw7d_OY)](https://app.opslevel.com/services/homebrew_tap_service/maturity-report)
+
 # Opslevel Tap
 
 ## What is Homebrew?
