@@ -5,25 +5,27 @@
 class Kubectl < Formula
   desc "Command line tool that enables you to import & reconcile services with OpsLevel"
   homepage "https://www.opslevel.com/"
-  version "2024.5.1"
+  version "2024.9.5"
   license "MIT"
 
   depends_on "go"
   depends_on "jq"
   depends_on :macos
 
-  url "https://github.com/opslevel/kubectl-opslevel/archive/refs/tags/v2024.5.1.tar.gz"
-  sha256 "c903ed8be144eb93d1a0232bd9fc243a302bbe1c973ec38cfd4bc2ebccb057a5"
+  on_arm do
+    url "https://github.com/opslevel/kubectl-opslevel/archive/refs/tags/v2024.9.5.tar.gz"
+    sha256 "0f21d6407d8c5da765f449fad7f5a2d9a34b09e464f9b099d596fd9a154027a3"
 
-  def install
-    ENV['CGO_ENABLED'] = '1'
-    ENV['CGO_CFLAGS'] = "-I#{Formula['jq'].opt_include}"
-    ENV['CGO_LDFLAGS'] = "-L#{Formula['jq'].opt_lib}"
-    cd 'src' do
-      system 'go', 'build', *std_go_args(
-        output: bin / 'kubectl-opslevel',
-        ldflags: "-s -w -X main.version=2024.5.1 -X main.commit=e4856e2"
-      )
+    def install
+      ENV['CGO_ENABLED'] = '1'
+      ENV['CGO_CFLAGS'] = "-I#{Formula['jq'].opt_include}"
+      ENV['CGO_LDFLAGS'] = "-L#{Formula['jq'].opt_lib}"
+      cd 'src' do
+        system 'go', 'build', *std_go_args(
+          output: bin / 'kubectl-opslevel',
+          ldflags: "-s -w -X main.version=2024.9.5 -X main.commit=a7ddc37"
+        )
+      end
     end
   end
 
