@@ -14,7 +14,7 @@ class Kubectl < Formula
 
   on_arm do
     url "https://github.com/opslevel/kubectl-opslevel/archive/refs/tags/v2024.9.5.tar.gz"
-    sha256 "0f21d6407d8c5da765f449fad7f5a2d9a34b09e464f9b099d596fd9a154027a3"
+    sha256 "fcd5b5171880b644657e67d50be95face455712c2f051910a11c08ad929174dd"
 
     def install
       ENV['CGO_ENABLED'] = '1'
