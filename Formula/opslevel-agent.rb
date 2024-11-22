@@ -13,7 +13,7 @@ class OpslevelAgent < Formula
   on_macos do
     on_intel do
       url "https://github.com/opslevel/opslevel-agent/archive/refs/tags/v2024.11.22.tar.gz"
-      sha256 "38738eabfb5297576d0c3995437a134dccd967f54dea2e11a900aacf29328d70"
+      sha256 "197a1a456ea0dc9ce30ebe1c403dfcded4d76643ffabf4b60776390b73743563"
 
       def install
         bin.install "opslevel-agent"
