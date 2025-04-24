@@ -36,6 +36,8 @@ With the following commands, you can install the latest version of each product:
 # Formulae
 brew install opslevel/tap/cli
 brew install opslevel/tap/kubectl
+brew install opslevel/tap/opslevel-agent
+brew install opslevel/tap/opslevel-mcp
 ```
 
 ## Why should I install packages from this tap?
