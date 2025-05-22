@@ -13,7 +13,7 @@ class OpslevelMcp < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/OpsLevel/opslevel-mcp/releases/download/v2025.5.22/opslevel-mcp-darwin-amd64.tar.gz"
-      sha256 "8e1b0e10617f656342897b7c42eba816e0d97ae0aa3140de45fa4035e3e61899"
+      sha256 "3ac6fa087968580f75bb7835ab9f00d612481eea8e944517e2cf04030e6564a2"
 
       def install
         bin.install "opslevel-mcp"
@@ -21,7 +21,7 @@ class OpslevelMcp < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/OpsLevel/opslevel-mcp/releases/download/v2025.5.22/opslevel-mcp-darwin-arm64.tar.gz"
-      sha256 "a22ad8f530e91b55227c2616d2161b8905d09603546626128b8d029bd8dc2463"
+      sha256 "7debeed2f1dd326504c527fe7b6635cc4353329c5509f99d2cbabcf3d52dd5be"
 
       def install
         bin.install "opslevel-mcp"
@@ -32,21 +32,21 @@ class OpslevelMcp < Formula
   on_linux do
     if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
       url "https://github.com/OpsLevel/opslevel-mcp/releases/download/v2025.5.22/opslevel-mcp-linux-amd64.tar.gz"
-      sha256 "7c47079025063e2c04ec784f93d629a30b22092748fefba00c048c3adc32a6c2"
+      sha256 "ab6b703584890aafd6bf719c4987bd2c17c41d215ff595fcce4989313fb89264"
       def install
         bin.install "opslevel-mcp"
       end
     end
     if Hardware::CPU.arm? and !Hardware::CPU.is_64_bit?
       url "https://github.com/OpsLevel/opslevel-mcp/releases/download/v2025.5.22/opslevel-mcp-linux-arm.tar.gz"
-      sha256 "b4a9ad625b5218c85a5218b4b8b31537a2367451f47dbc459e0419e8f6d9237a"
+      sha256 "aafe3630eab89d4afe501581275b125d1976fd78e734fdb1b979ab357ee5c8f0"
       def install
         bin.install "opslevel-mcp"
       end
     end
     if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
       url "https://github.com/OpsLevel/opslevel-mcp/releases/download/v2025.5.22/opslevel-mcp-linux-arm64.tar.gz"
-      sha256 "e5be5e272353d480093f48f16239323f88e1727b4519f153692f77e89c5b2103"
+      sha256 "21867769c2f9d9b7f203440a6738108f6b7a9c1ecdede401729e20925e0540ed"
       def install
         bin.install "opslevel-mcp"
       end
