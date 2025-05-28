@@ -5,23 +5,23 @@
 class OpslevelMcp < Formula
   desc "Opslevel MCP Server"
   homepage "https://www.opslevel.com/"
-  version "2025.5.22"
+  version "2025.5.28"
   license "MIT"
 
   depends_on "jq"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/OpsLevel/opslevel-mcp/releases/download/v2025.5.22/opslevel-mcp-darwin-amd64.tar.gz"
-      sha256 "3ac6fa087968580f75bb7835ab9f00d612481eea8e944517e2cf04030e6564a2"
+      url "https://github.com/OpsLevel/opslevel-mcp/releases/download/v2025.5.28/opslevel-mcp-darwin-amd64.tar.gz"
+      sha256 "c609f870c12ac4b0dfaa0acfa46e00a4bad6a0df2de3e32af6fa4b73e7444574"
 
       def install
         bin.install "opslevel-mcp"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/OpsLevel/opslevel-mcp/releases/download/v2025.5.22/opslevel-mcp-darwin-arm64.tar.gz"
-      sha256 "7debeed2f1dd326504c527fe7b6635cc4353329c5509f99d2cbabcf3d52dd5be"
+      url "https://github.com/OpsLevel/opslevel-mcp/releases/download/v2025.5.28/opslevel-mcp-darwin-arm64.tar.gz"
+      sha256 "36da42e2f67c8dc8711711809feba4565d8c6de76fc29a02bc7ca92ebe86cd62"
 
       def install
         bin.install "opslevel-mcp"
@@ -31,22 +31,22 @@ class OpslevelMcp < Formula
 
   on_linux do
     if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
-      url "https://github.com/OpsLevel/opslevel-mcp/releases/download/v2025.5.22/opslevel-mcp-linux-amd64.tar.gz"
-      sha256 "ab6b703584890aafd6bf719c4987bd2c17c41d215ff595fcce4989313fb89264"
+      url "https://github.com/OpsLevel/opslevel-mcp/releases/download/v2025.5.28/opslevel-mcp-linux-amd64.tar.gz"
+      sha256 "bf3c332b052594f985f97f212457dbc9d9c9c0792af1fd2109c59a05fbd98e26"
       def install
         bin.install "opslevel-mcp"
       end
     end
     if Hardware::CPU.arm? and !Hardware::CPU.is_64_bit?
-      url "https://github.com/OpsLevel/opslevel-mcp/releases/download/v2025.5.22/opslevel-mcp-linux-arm.tar.gz"
-      sha256 "aafe3630eab89d4afe501581275b125d1976fd78e734fdb1b979ab357ee5c8f0"
+      url "https://github.com/OpsLevel/opslevel-mcp/releases/download/v2025.5.28/opslevel-mcp-linux-arm.tar.gz"
+      sha256 "f3556ffefc36aeb9eb37fc346bbfc7c2c35e9cf231d14577c401284e83b80feb"
       def install
         bin.install "opslevel-mcp"
       end
     end
     if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
-      url "https://github.com/OpsLevel/opslevel-mcp/releases/download/v2025.5.22/opslevel-mcp-linux-arm64.tar.gz"
-      sha256 "21867769c2f9d9b7f203440a6738108f6b7a9c1ecdede401729e20925e0540ed"
+      url "https://github.com/OpsLevel/opslevel-mcp/releases/download/v2025.5.28/opslevel-mcp-linux-arm64.tar.gz"
+      sha256 "a451dbcc81f7e1da6d1d450ac4d00e5dd6dbde84249a4c00d820cda29e26aab1"
       def install
         bin.install "opslevel-mcp"
       end
