@@ -21,7 +21,7 @@ class OpslevelAgent < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/opslevel/opslevel-agent/archive/refs/tags/v2025.7.22.tar.gz"
-      sha256 "a246123d3a28fc3bd4557e1ca5d9a6b0dabd464f2efb8176ef74952ec585afce"
+      sha256 "a2d2279b58e2194859d190973995218379f43b5641977300a17472af32253474"
 
       def install
         bin.install "opslevel-agent"
