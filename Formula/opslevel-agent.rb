@@ -5,23 +5,23 @@
 class OpslevelAgent < Formula
   desc "Main repository for the OpsLevel agent"
   homepage "https://www.opslevel.com/"
-  version "2024.11.22"
+  version "2025.7.22"
   license "MIT"
 
   depends_on "go"
 
   on_macos do
-    on_intel do
-      url "https://github.com/opslevel/opslevel-agent/archive/refs/tags/v2024.11.22.tar.gz"
-      sha256 "197a1a456ea0dc9ce30ebe1c403dfcded4d76643ffabf4b60776390b73743563"
+    if Hardware::CPU.intel?
+      url "https://github.com/opslevel/opslevel-agent/archive/refs/tags/v2025.7.22.tar.gz"
+      sha256 "3281e36fff7df13dbce5b22f6141e3d7245a503aa85bef27266e4d4c7fcfb786"
 
       def install
         bin.install "opslevel-agent"
       end
     end
-    on_arm do
-      url "https://github.com/opslevel/opslevel-agent/archive/refs/tags/v2024.11.22.tar.gz"
-      sha256 "6226f46434e217bc1b80631419b6df0c2bfd1199b7210eb9f1a33216483c9581"
+    if Hardware::CPU.arm?
+      url "https://github.com/opslevel/opslevel-agent/archive/refs/tags/v2025.7.22.tar.gz"
+      sha256 "3f21002eafdc9dc72c7036642cb9b5097cfdeedb736e4f1923a71107d175937f"
 
       def install
         bin.install "opslevel-agent"
@@ -30,34 +30,25 @@ class OpslevelAgent < Formula
   end
 
   on_linux do
-    on_intel do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/opslevel/opslevel-agent/archive/refs/tags/v2024.11.22.tar.gz"
-        sha256 "41cabd1473ef2d1f48603c81007429b1198d34147c419fa61eea403c4b8646c6"
-
-        def install
-          bin.install "opslevel-agent"
-        end
+    if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
+      url "https://github.com/opslevel/opslevel-agent/archive/refs/tags/v2025.7.22.tar.gz"
+      sha256 "408291b065ff5e0f6e1b35a6ad86a98158cfe39e6dcc2c8948a061d4b8c0a8c4"
+      def install
+        bin.install "opslevel-agent"
       end
     end
-    on_arm do
-      if !Hardware::CPU.is_64_bit?
-        url "https://github.com/opslevel/opslevel-agent/archive/refs/tags/v2024.11.22.tar.gz"
-        sha256 "d755b2787e59130a0278bbe5017080bbf85b98aad79e6e6232f53e1213f922fb"
-
-        def install
-          bin.install "opslevel-agent"
-        end
+    if Hardware::CPU.arm? and !Hardware::CPU.is_64_bit?
+      url "https://github.com/opslevel/opslevel-agent/archive/refs/tags/v2025.7.22.tar.gz"
+      sha256 "adffa01e1607c3834f4fbd4be82efa16b50d669e55cf7712e7dffc9df516642f"
+      def install
+        bin.install "opslevel-agent"
       end
     end
-    on_arm do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/opslevel/opslevel-agent/archive/refs/tags/v2024.11.22.tar.gz"
-        sha256 "d9158922c7ac8aec681c2fbbfc4e77aaeb29544a916f125c378b4ecbc976afd5"
-
-        def install
-          bin.install "opslevel-agent"
-        end
+    if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
+      url "https://github.com/opslevel/opslevel-agent/archive/refs/tags/v2025.7.22.tar.gz"
+      sha256 "93234bd64ae5a1d8585406dbdb9ec8925893f8e0039ace1b6e6cb5a502a008a1"
+      def install
+        bin.install "opslevel-agent"
       end
     end
   end
