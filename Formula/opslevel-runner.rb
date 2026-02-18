@@ -11,7 +11,7 @@ class OpslevelRunner < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/OpsLevel/opslevel-runner/releases/download/v2026.2.18/opslevel-runner-darwin-amd64.tar.gz"
-      sha256 "a7da8e2a668b953d29839ac507c1d9acc74d119fc78e06b9ab4485d8edc34eda"
+      sha256 "309fac8db12fba0fdaef97f7cdff01f1646c44cd83caeecabb28f9935d55b91d"
 
       def install
         bin.install "opslevel-runner"
@@ -19,7 +19,7 @@ class OpslevelRunner < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/OpsLevel/opslevel-runner/releases/download/v2026.2.18/opslevel-runner-darwin-arm64.tar.gz"
-      sha256 "b18472ac36d5fa1c1d42edcddb35dede22bd9bc61a17fcc4fcebe82de8d10be0"
+      sha256 "e79b3ab3a1e33ec0cf880c706def742ac4c7011a0b15665f84b1aa772b214a90"
 
       def install
         bin.install "opslevel-runner"
@@ -30,21 +30,21 @@ class OpslevelRunner < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/OpsLevel/opslevel-runner/releases/download/v2026.2.18/opslevel-runner-linux-amd64.tar.gz"
-      sha256 "fc6c618f5c170288bdb1b4e4dd157539ee2ca2168a246e7b2023139c6b9123ce"
+      sha256 "d7a7e90955cb0736109e8604da3dc276d6c42e129d1fa738813d9179be090100"
       def install
         bin.install "opslevel-runner"
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
       url "https://github.com/OpsLevel/opslevel-runner/releases/download/v2026.2.18/opslevel-runner-linux-arm.tar.gz"
-      sha256 "2c954802f6d768c92bb6a96ab9a1ff1446aff31d140bd5f34098b20c9e98833c"
+      sha256 "61e8a9f57d9dfdfc8a67b0798a27e2c3019f135d954133336503c350525b0832"
       def install
         bin.install "opslevel-runner"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/OpsLevel/opslevel-runner/releases/download/v2026.2.18/opslevel-runner-linux-arm64.tar.gz"
-      sha256 "f712273302b8c5fbb2ff3101e82094445732410aef0d6c5cff76441b9365284a"
+      sha256 "c1c637589e6b06a75800b9812892c64942918cd0e9cee7fa1b3dc5cc965d9f17"
       def install
         bin.install "opslevel-runner"
       end
